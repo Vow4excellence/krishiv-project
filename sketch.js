@@ -37,7 +37,7 @@ function draw() {
 
   textSize(12);
   fill("black");
-  text("Food Stock remaining : " + foodStock, 0, 150);
+  text("Food Stock remaining : " + foodStock, 50, 150);
   textSize(15);
   fill("black")
   text("Press the Up Arrow key to feed Draco Milk!", 110, 50);
