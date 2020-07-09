@@ -2,7 +2,7 @@
 var dog; 
 var dogImg, dogHappy;
 var database;
-var foodStock, foodS;
+var foodStock, foods;
 
 function preload()
 {
@@ -32,12 +32,13 @@ function draw() {
   background(46, 139, 87);
 
   if(keyWentDown(UP_ARROW)){
+    writeStock(foods);
     dog.addImage(dogHappy);
   }
 
   textSize(12);
   fill("black");
-  text("Food Stock remaining : " + foodStock, 50, 150);
+  text("Food Stock remaining : " + foods, 0, 150);
   textSize(15);
   fill("black")
   text("Press the Up Arrow key to feed Draco Milk!", 110, 50);
@@ -49,21 +50,22 @@ function draw() {
 }
 
 function readStock(data){
-    foodS = data.val();
+    foods = data.val();
 }
 
 function writeStock(x){
 
-  x : 20
+ // x : 20
 
 if(x <= 0){
-  x: 0;
+  x= 0;
 } else {
   x = x - 1;
 }
 
 database.ref('/').update({
-  Food: x
+  food: x
 })
 
 }
+
